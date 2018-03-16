@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/ivan/.nvm/versions/node/v9.2.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js test
+  /Users/ivan/.nvm/versions/node/v9.2.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js pm2
 
 PATH: 
   /Users/ivan/.nvm/versions/node/v9.2.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin
@@ -21,7 +21,7 @@ npm manifest:
     "author": "Ivan Yapeter",
     "license": "MIT",
     "scripts": {
-      "dev": "pm2 start lib/server.js --watch --interpreter babel-node",
+      "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node",
       "webpack": "webpack -wd",
       "test": "jest --watch"
     },
@@ -41,7 +41,8 @@ npm manifest:
       "eslint-plugin-promise": "^3.7.0",
       "eslint-plugin-react": "^7.7.0",
       "eslint-plugin-standard": "^3.0.1",
-      "jest": "^22.4.2"
+      "jest": "^22.4.2",
+      "react-test-renderer": "^16.2.0"
     },
     "dependencies": {
       "babel-cli": "^6.26.0",
@@ -5429,6 +5430,14 @@ Lockfile:
       object-assign "^4.1.1"
       prop-types "^15.6.0"
   
+  react-test-renderer@^16.2.0:
+    version "16.2.0"
+    resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.2.0.tgz#bddf259a6b8fcd8555f012afc8eacc238872a211"
+    dependencies:
+      fbjs "^0.8.16"
+      object-assign "^4.1.1"
+      prop-types "^15.6.0"
+  
   react@^16.2.0:
     version "16.2.0"
     resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
@@ -7055,7 +7064,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c jest --watch
+  Arguments: -c /Users/ivan/Sites/ivan/advanced-react/node_modules/.bin/pm2
   Directory: /Users/ivan/Sites/ivan/advanced-react
   Output:
   
