@@ -36,3 +36,8 @@ jspm_packages
 # project generated files #
 ###########################
 bundle
+build
+public
+public/bundle.js
+public/app.js
+coverage
